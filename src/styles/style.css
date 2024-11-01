@@ -1,0 +1,489 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Content Skip */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background-color: #bf1722;
+  color: white;
+  padding: 15px 25px;
+  z-index: 9999;
+  transition: top 0.3s;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  top: 0; /* Menampilkan di posisi yang terlihat */
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Header */
+.app-bar {
+  position: fixed; /* Menempel di atas */
+  top: 0; /* Menetapkan posisi ke atas */
+  left: 0; /* Menetapkan posisi ke kiri */
+  width: 100%; /* Lebar navbar penuh */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #333333;
+  color: white;
+  z-index: 1000; /* Memberikan prioritas di atas elemen lainnya */
+}
+
+.nav-menu {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu li {
+  margin-left: 30px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
+}
+
+.nav-menu a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+  text-align: center;
+  background-image: url("../public/images/heros/hero-small.jpg");
+  background-position: center;
+  background-color: #555;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero__inner {
+  margin: 0 auto;
+  max-width: 650px;
+  background-color: rgba(82, 82, 80, 0.3);
+  box-shadow: 0 4px 10px #000;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.hero__title {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 36px;
+}
+
+.hero__tagline {
+  color: #fff;
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* Content */
+
+/* Container utama */
+main {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Main content styling */
+#main-content {
+  padding: 40px 20px;
+  background-color: #fafafa;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content_heading {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #222;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Restaurant list styling */
+.restaurants {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 15px;
+}
+
+.restaurant-item {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.restaurant-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Restaurant header styling */
+.restaurant-item_header {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.restaurant-item_header_poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  border-bottom: 3px solid #3498db;
+}
+
+.restaurant-item:hover .restaurant-item_header_poster {
+  transform: scale(1.1);
+}
+
+.restaurant-item_header_rating {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #ff6b00;
+  color: #ffffff;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Restaurant content styling */
+.restaurant-item_content {
+  padding: 20px;
+  text-align: center;
+}
+
+.restaurant-item_content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.restaurant-item_content h3 a {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.restaurant-item_content h3 a:hover {
+  color: #21618c;
+}
+
+.restaurant-item_content p {
+  font-size: 1.1rem;
+  color: #777;
+  margin-top: 8px;
+}
+
+.restaurant_title {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+img {
+  border-radius: 30px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.restaurant_info,
+.restaurant_overview,
+.restaurant_reviews {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+}
+
+h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #2980b9;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+}
+
+.restaurant_reviews {
+  border-top: 2px solid #2980b9;
+  padding-top: 15px;
+}
+
+.restaurant_reviews h3 {
+  margin-top: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content_heading {
+    font-size: 2.2rem;
+  }
+
+  .restaurant-item_header {
+    height: 150px;
+  }
+
+  .restaurant-item_content h3 {
+    font-size: 1.2rem;
+  }
+
+  .restaurant-item_content p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer__content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer a {
+  color: #f1f1f1;
+  text-decoration: none;
+  margin: 0 8px;
+  padding: 15px;
+}
+
+.footer a:hover {
+  color: #bf1722;
+}
+
+/* Hamburger Button */
+#hamburger {
+  padding: 10px; /* Tambahkan padding untuk memastikan dimensi yang cukup */
+  width: 50px; /* Sesuaikan lebar */
+  height: 50px; /* Sesuaikan tinggi */
+}
+
+a,
+button,
+input,
+textarea {
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* Responsif */
+
+@media screen and (width > 600px) {
+  .hero {
+    background-image: url("../public/images/heros/hero-medium.jpg");
+  }
+}
+
+@media screen and (width > 1000px) {
+  .hero {
+    height: 500px;
+    background-image: url("../public/images/heros/hero-large.jpg");
+  }
+}
+
+/* Untuk perangkat kecil (ponsel) */
+@media screen and (max-width: 456px) {
+  #drawer {
+    width: 150px;
+    position: absolute;
+    left: 0;
+    margin-top: 189px;
+
+    /* menyembunyikan #drawer -250px (sesuai dengan ukuran lebar drawer) ke kiri */
+    transform: translate(-250px, 0);
+    transition: transform 0.3s ease-in-out;
+    background-color: #333;
+    border-bottom-right-radius: 20px;
+  }
+
+  #drawer ul {
+    display: inline;
+  }
+
+  #drawer ul li {
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+  }
+
+  #drawer.open {
+    transform: translate(0, 0);
+  }
+
+  #hamburger {
+    display: flex; /* Tampilkan hamburger untuk ponsel */
+  }
+
+  .app-bar {
+    justify-content: space-between;
+  }
+
+  .hero {
+    margin-top: 60px;
+  }
+
+  .hero__inner {
+    margin: 0 auto;
+    max-width: 350px;
+  }
+
+  .hero__title {
+    font-size: 25px;
+  }
+
+  .hero__tagline {
+    font-size: 15px;
+  }
+}
+
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
+
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Untuk perangkat kecil (ponsel) */
+@media screen and (min-width: 456px) and (max-width: 727px) {
+  #drawer {
+    width: 150px;
+    position: absolute;
+    left: 0;
+    margin-top: 189px;
+
+    /* menyembunyikan #drawer -250px (sesuai dengan ukuran lebar drawer) ke kiri */
+    transform: translate(-250px, 0);
+    transition: transform 0.3s ease-in-out;
+    background-color: #333;
+    border-bottom-right-radius: 20px;
+  }
+
+  #drawer ul {
+    display: inline;
+  }
+
+  #drawer ul li {
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+  }
+
+  #drawer.open {
+    transform: translate(0, 0);
+  }
+
+  #hamburger {
+    display: flex; /* Tampilkan hamburger untuk ponsel */
+  }
+
+  .app-bar {
+    justify-content: space-between;
+  }
+
+  .hero {
+    margin-top: 60px;
+  }
+
+  .hero__inner {
+    margin: 0 auto;
+    max-width: 450px;
+  }
+
+  .hero__title {
+    font-size: 25px;
+  }
+
+  .hero__tagline {
+    font-size: 15px;
+  }
+}
+
+/* Untuk perangkat sedang (tablet dan desktop kecil) */
+@media screen and (min-width: 728px) and (max-width: 1200px) {
+  .nav-menu {
+    display: flex; /* Tampilkan menu untuk tablet dan desktop kecil */
+  }
+
+  #hamburger {
+    display: none; /* Sembunyikan hamburger */
+  }
+}
+
+/* Untuk perangkat besar (desktop) */
+@media screen and (min-width: 1201px) {
+  .nav-menu {
+    display: flex; /* Tampilkan menu untuk desktop */
+  }
+
+  #hamburger {
+    display: none; /* Sembunyikan hamburger */
+  }
+}
