@@ -80,7 +80,7 @@ const createRestaurantItemTemplate = (restaurant) => `
       <img loading="lazy" width="400" height="400" class="restaurant-item__header__poster" alt="${restaurant.name}" crossorigin="anonymous"
            src="${CONFIG.BASE_IMAGE_URL_MEDIUM}${restaurant.pictureId}">
       <div class="restaurant-item__header__rating">
-        <p>Rating: <span class="restaurant-item__header__rating__score">${restaurant.rating}</span></p>
+        <p> 🌟 Rating: <span class="restaurant-item__header__rating__score">${restaurant.rating}</span></p>
       </div>
     </div>
     <div class="restaurant-item__content">
